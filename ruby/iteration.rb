@@ -31,23 +31,47 @@ days_of_week = [ "Monday", "Tuesday", "Wednesday", "Thursday", "Friday", "Saturd
 
 months_of_year = { January: 1, February: 2, March: 3, April: 4, May: 5, June: 6, July: 7, August: 8, September: 9, October: 10, November: 11, December: 12 }
 
-# .each Method
 
+# .each Method
+#  ARRAY
 days_of_week.each do |days|
   puts "The days of the week are #{days}."
+  puts "----------------------------------------------------"
 end
-puts "----------------------"
 
+#  HASH
 months_of_year.each do |month, digit|
-  puts "The months in a year #{month} and the digits that follow that month #{digit}."
+  puts "The #{digit} of #{month} of the year."
+  puts "----------------------------------------------------"
 end
 
 
 # .map! Method
+# ARRAY
+puts "Original data:"
+p days_of_week
 
 days_of_week.map! do |days|
+  puts days
+  days.next
+end
 
+puts "After .map! call:"
+p days_of_week
 
+# HASH
+# puts "Original data:"
+# p months_of_year
+# p modified_months
+
+# months_of_year.map do |month, digit|
+#   modified_months << digit.next
+#   puts "#{digit} has changed for #{month}"
+# end
+
+# puts "After .map call:"
+# p months_of_year
+# p modified_months
 
 
 
