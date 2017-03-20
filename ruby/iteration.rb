@@ -89,18 +89,55 @@ numbers = { 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5, 'six
 puts "Original data:"
 p letters
 
-letters.delete_if { |letter| letter < "c" }
+puts letters.delete_if { |letter| letter < "c" }
 
 # HASH
 puts "Original data:"
 p numbers
 
-numbers.delete_if { |key, value| key >= "two" }
+puts numbers.delete_if { |name, digit| name >= "two" }
 
 # 2. A method that filters a data structure for only items that do satisfy a certain condition (for example keeping any numbers that are less than 5).
 
+# .keep_if Method
+# ARRAY
+puts "Original data:"
+p letters
 
+puts letters.keep_if { |letter| letter >= "c" }
 
+# HASH
+puts "Original data:"
+p numbers
+
+puts numbers.keep_if { |name, digit| name >= "three" }
+
+# 3. A different method that filters a data structure for only items satisfying a certain condition -- Ruby offers several options!
+
+# .select Method
+# ARRAY
+puts "Original data:"
+p letters
+
+puts letters.select { |letter| letter == "c" }
+
+# HASH
+puts "Original data:"
+p numbers
+
+puts numbers.select { |name, digit| name == "three" }
+
+# 4. A method that will remove items from a data structure until the condition in the block evaluates to false, then stops (you may not find a perfectly working option for the hash, and that's okay).
+
+# ARRAY
+puts "Original data:"
+p letters
+
+puts letters.take_while { |letter| letter < "d" }
+
+# HASH
+
+# Could not locate a method that will take.
 
 
 
