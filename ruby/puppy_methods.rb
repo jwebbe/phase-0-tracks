@@ -53,7 +53,7 @@ class Puppy
 
 end
 
-#driver code
+#DRIVER CODE - PUPPY CLASS
 puppy = Puppy.new
 puppy.fetch("ball")
 puppy.speak(5)
@@ -77,7 +77,7 @@ class Kitten
 
 end
 
-# DRIVER CODE
+# DRIVER CODE - MY KITTEN
 my_kittens = []
 50.times do
   my_kittens << Kitten.new
