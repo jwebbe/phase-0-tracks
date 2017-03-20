@@ -138,36 +138,3 @@ puts letters.take_while { |letter| letter < "d" }
 # HASH
 
 # Could not locate a method that will take.
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
