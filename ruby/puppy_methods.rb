@@ -1,3 +1,25 @@
+# --- 6.2 MANDATORY PAIRING: INSTANCE METHODS ---
+
+# *RELEASE 0: Add Behavior to a Class *
+
+# Add driver code at the bottom that initializes an instance of Puppy, and verify that your instance can now fetch a ball. Run the file from the command line to check your work.
+# Add a speak method that takes an integer, and then prints "Woof!" that many times.
+# Add a roll_over method that just prints "*rolls over*".
+# Add a dog_years method that takes an integer (of human years) and converts that number to dog years, returning a new integer.
+# Add one more trick -- whichever one you'd like.
+# If you haven't already, update your driver code to demonstrate that all of these methods work as expected.
+
+# *RELEASE 1: Declare an Initialize Method
+# Add a method to your Puppy class named initialize. It should print "Initializing new puppy instance ..."
+# Without changing your driver code, run the program. Does initialize run? When? A1: It does not run.
+
+# *RELEASE 2: Write your own class, and experiment!
+# In puppy_methods.rb, design and implement your own class below the Puppy class -- anything you'd like, but it should have an initialize method and at least two other instance methods. Then do the following:
+
+# Use a loop to make 50 instances of your class.
+# Modify your loop so that it stores all of the instances in a data structure.
+# Iterate over that data structure using .each and call the instance methods you wrote on each instance. So if you wrote a Gymnast class, this is where you'd call .flip and .jump on each of your instances of Gymnast.
+
 class Puppy
 
   def initialize
