@@ -10,22 +10,19 @@
 # Create an empty Hash to store our names.
 # Set Alias names to false to run for our loop later on.
 
-regular_name = nil
+former_name = nil
 secret_alias = {}
 
 
 # Create a loop while condition is false to attain Agent's Full Name.
-for alias_names
-  if alias_names = true
-  puts "Agent's Full Name:"
-  secret_name = gets.chomp
-  else
-    puts "Please Try Again!"
-  end
+until former_name == "quit"
+
+  puts "Please enter your Former Name or type 'quit' to end."
+  former_name = gets.chomp
 end
 
 # Store that name into our variable and change any text to lowercase.
-agents_name = secret_name.downcase
+agents_name = former_name.downcase.split('')
 
 # Create a Method to suffle through Agent's Names with one parameter(Agent's Name)
 def shuffle(agents_name)
@@ -40,6 +37,11 @@ def shuffle(agents_name)
   index += 1
   end
 end
+
+
+
+
+
 
 alias_names = shuffle_of_names[agents_name]
 
