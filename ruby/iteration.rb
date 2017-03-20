@@ -74,6 +74,30 @@ p days_of_week
 # p modified_months
 
 
+#  /// RELEASE 2 ///
+# Use the documentation to find other Array and Hash methods that take blocks.
+# Use one for the Array and One for the Hash.
+
+letters = ["a", "b", "c", "d", "e"]
+
+numbers = { 'one' => 1, 'two' => 2, 'three' => 3, 'four' => 4, 'five' => 5, 'six' => 6 }
+
+# 1. A method that iterates through the items, deleting any that meet a certain condition (for example, deleting any numbers that are less than 5).
+
+#  .delete_if Method
+# ARRAY
+puts "Original data:"
+p letters
+
+letters.delete_if { |letter| letter < "c" }
+
+# HASH
+puts "Original data:"
+p numbers
+
+numbers.delete_if { |key, value| key >= "two" }
+
+# 2. A method that filters a data structure for only items that do satisfy a certain condition (for example keeping any numbers that are less than 5).
 
 
 
