@@ -1,22 +1,13 @@
 #  --- 6.3 Attributes ---
 
-#  /// RELEASE 0 ///
-# A speak method that will print "Ho, ho, ho! Haaaappy holidays!" (Santa has been working on being more inclusive.)
-
-# An eat_milk_and_cookies method that takes a cookie type (example: "snickerdoodle") as a parameter and prints "That was a good <type of cookie here>!"
-
-# An initialize method that prints "Initializing Santa instance ...".
-
-# Add a bit of code below your class declaration to check that you're able to initialize a Santa instance and call its methods.
-
-
-
 class Santa
 
-  def initialize
+  def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
     @gender = ''
     @ethnicity = ''
+    @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
+    @age = 0
   end
 
   def speak
@@ -29,11 +20,30 @@ class Santa
 
 end
 
-jenny = Santa.new
-ralph = Santa.new
 
-jenny.speak
-jenny.eat_milk_and_cookies("Snickerdoodle")
+jason = Santa.new("#{@gender}", "#{@ethnicity}")
+jason.speak
+jason.eat_milk_and_cookies("Snickerdoodle")
 
-ralph.speak
-ralph.eat_milk_and_cookies("Chocolate Chip")
+santas = Santa.new("male", "trans")
+
+santas = []
+santas << Santa.new("agender", "black")
+santas << Santa.new("female", "Latino")
+santas << Santa.new("bigender", "white")
+santas << Santa.new("male", "Japanese")
+santas << Santa.new("female", "prefer not to say")
+santas << Santa.new("gender fluid", "Mystical Creature (unicorn)")
+santas << Santa.new("N/A", "N/A")
+
+santa_genders = ["agender", "female", "bigender", "male", "female", "gender fluid", "N/A"]
+
+santa_ethnicities = ["black", "Latino", "white", "Japanese-African", "prefer not to say", "Mystical Creature (unicorn)", "N/A"]
+
+santa_array = []
+
+santa_genders.length.times do |count|
+  santa_array << Santa.new(santa_genders[count], santa_ethnicities[count])
+end
+
+puts santa_array.each.length
