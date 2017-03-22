@@ -21,5 +21,12 @@
 
 class Puppy
 
+  def play_dead(str)
+    puts "Here boy! #{str}"
+  end
 end
+
+roxy = Puppy.new
+puts roxy.play_dead("Play Dead!")
+
 
