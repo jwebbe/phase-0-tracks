@@ -35,43 +35,75 @@
     # print out those values
 # output: nil
 
-def create_list(items)
-
-  grocery_items = items.split(" ")
-  grocery_list = {}
-
-  grocery_items.each do |item|
-    grocery_list[item] = 1
-  end
-  grocery_list
+def create_list(item)
+  list = []
+  list << item
 end
 
-def add_items(list, item, quantity= 1)
-
-  list[item] = quantity
-  list
+def add_item(list, item_name)
+  list[item_name] = []
+  p list
 end
+
 
 def remove_items(list, item)
 
   if list.has_key?(item)
     list.delete(item)
-    list
+  end
+    puts "---------------------"
+    puts "current grocery list"
+    list.keys.each_with_index do | item_name, index |
+    puts "#{item_name}: #{list[item_name]}"
+    puts "---------------------"
   end
 end
 
-def update_qty(list, item, quantity)
-  if list.has_key?(item)
-    list[item] = quantity
-    list
+
+def add_groceries(list, item_name, item_number)
+  list[item_name] = item_number
+  p list
+end
+
+list = {}
+
+
+def user_interface(list)
+  puts "---------------------"
+  puts "current grocery list"
+  list.keys.each_with_index do | item_name, index |
+    puts "#{item_name}: #{list[item_name]}"
+  puts "---------------------"
   end
 end
 
-def print_list(list)
-  list.each do |items, qty|
-    puts "#{items}:#{qty}"
+
+loop do
+user_input = ""
+  puts "please enter the name of the item in your grocery list, type none when you done"
+  item_name = ""
+  item_name = create_list(gets.chomp)
+    if item_name == create_list("none")
+      puts "here is your list"
+      user_interface(list)
+      user_input == "none"
+      break
+    end
+
+  if user_input == "none"
+    break
+  else
+    puts "please type the amount that you want of each item"
+    item_number = gets.chomp.to_i
+    add_groceries(list, item_name, item_number)
   end
+
 end
+
+
+  puts "if you want to remove an item from the list, please type the item, else type no"
+
+  remove = remove_items(list, gets.chomp)
 
 list = create_list("Lemonade Tomatoes")
 update_qty(list, "Lemonade", 2)
