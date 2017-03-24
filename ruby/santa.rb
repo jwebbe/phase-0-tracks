@@ -1,6 +1,8 @@
 #  --- 6.3 Attributes ---
 
 class Santa
+  attr_reader :age, :ethnicity
+  attr_accessor :celebrate_birthday, :get_mad_at, :gender
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
@@ -18,30 +20,20 @@ class Santa
     puts "That was a good #{cookie}!"
   end
  # Setter Methods (celebrate_birthday, get_mad_at, gender=)
-  def celebrate_birthday
-    new_age = @age + 1
-  end
+  # def celebrate_birthday
+  #   new_age = @age + 1
+  # end
 
-  def get_mad_at(reindeers_name)
-    reindeers = @reindeer_ranking.index(reindeers_name)
-    @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(reindeers))
-    puts "#{reindeers_name} is now in ranking place:"
-    puts @reindeer_ranking.index(reindeers_name) + 1
-  end
-  end
+  # def get_mad_at(reindeers_name)
+  #   reindeers = @reindeer_ranking.index(reindeers_name)
+  #   @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(reindeers))
+  #   puts "#{reindeers_name} is now in ranking place:"
+  #   puts @reindeer_ranking.index(reindeers_name) + 1
+  # end
 
-  def gender=(new_gender)
-    @gender = new_gender
-  end
-
-  # Getter Methods(age, ethnicity)
-  def age
-    @age
-  end
-
-  def ethnicity
-    @ethnicity
-  end
+  # def gender=(new_gender)
+  #   @gender = new_gender
+  # end
 
 end
 
@@ -50,7 +42,9 @@ santa1 = Santa.new("male", "asian")
 santa1.speak
 santa1.eat_milk_and_cookies("Snickerdoodle")
 santa1.age
-santa1.get_mad_at("Rudolph")
+santa1.get_mad_at
+santa1.gender=("Hemiograph")
+
 
 santa2 = Santa.new("female", "white")
 santa2.eat_milk_and_cookies("Chocolate Chip")
@@ -76,4 +70,13 @@ santa_array = []
 
 santa_genders.length.times do |count|
   santa_array << Santa.new(santa_genders[count], santa_ethnicities[count])
+end
+
+40.times do
+  @gender = santa_genders.sample
+  @ethnicity = santa_ethnicities.sample
+  @age = rand(60)
+  santa_array << Santa.new(@gender, @ethnicity)
+
+puts "This Santa is a #{@gender} and their #{@ethnicity} and is #{@age} years old."
 end
