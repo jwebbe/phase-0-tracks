@@ -4,8 +4,8 @@ class Santa
 
   def initialize(gender, ethnicity)
     puts "Initializing Santa instance ..."
-    @gender = ''
-    @ethnicity = ''
+    @gender = gender
+    @ethnicity = ethnicity
     @reindeer_ranking = ["Rudolph", "Dasher", "Dancer", "Prancer", "Vixen", "Comet", "Cupid", "Donner", "Blitzen"]
     @age = 0
   end
@@ -17,13 +17,45 @@ class Santa
   def eat_milk_and_cookies(cookie)
     puts "That was a good #{cookie}!"
   end
+ # Setter Methods (celebrate_birthday, get_mad_at, gender=)
+  def celebrate_birthday
+    new_age = @age + 1
+  end
+
+  def get_mad_at(reindeers_name)
+    reindeers = @reindeer_ranking.index(reindeers_name)
+    @reindeer_ranking.insert(-1, @reindeer_ranking.delete_at(reindeers))
+    puts "#{reindeers_name} is now in ranking place:"
+    puts @reindeer_ranking.index(reindeers_name) + 1
+  end
+  end
+
+  def gender=(new_gender)
+    @gender = new_gender
+  end
+
+  # Getter Methods(age, ethnicity)
+  def age
+    @age
+  end
+
+  def ethnicity
+    @ethnicity
+  end
 
 end
 
 
-jason = Santa.new("#{@gender}", "#{@ethnicity}")
-jason.speak
-jason.eat_milk_and_cookies("Snickerdoodle")
+santa1 = Santa.new("male", "asian")
+santa1.speak
+santa1.eat_milk_and_cookies("Snickerdoodle")
+santa1.age
+santa1.get_mad_at("Rudolph")
+
+santa2 = Santa.new("female", "white")
+santa2.eat_milk_and_cookies("Chocolate Chip")
+santa2.speak
+santa2.celebrate_birthday
 
 santas = Santa.new("male", "trans")
 
@@ -45,5 +77,3 @@ santa_array = []
 santa_genders.length.times do |count|
   santa_array << Santa.new(santa_genders[count], santa_ethnicities[count])
 end
-
-puts santa_array.each.length
