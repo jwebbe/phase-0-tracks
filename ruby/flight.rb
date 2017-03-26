@@ -11,7 +11,6 @@ module Flight
   end
 end
 
-
 # Declare classes for bird and plane.
 class Bird
   # Add your module to your Bird and Plane classes:
@@ -22,3 +21,10 @@ class Plane
   # Add your module to your Bird and Plane classes:
   include Flight
 end
+
+# Add Driver code to test.
+bird = Bird.new
+bird.take_off(800)
+
+plane = Plane.new
+plane.take_off(30000)
