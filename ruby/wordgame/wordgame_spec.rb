@@ -1,7 +1,7 @@
 
 require_relative 'wordgame'
 
-describe Game do
+describe WordGame do
   let(:new_game) { WordGame.new("james") }
 
 it "prints dashes for each character space" do
@@ -13,7 +13,7 @@ it "expects the number of guesses to equal number of letters" do
   end
 
 it "returns a message based on whether letter is inside word variable or not" do
-  expect(new_game.progress('j')).to eq "______"
+  expect(new_game.progress('j')).to eq "j____"
   end
 
 end
