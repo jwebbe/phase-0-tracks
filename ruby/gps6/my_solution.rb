@@ -118,3 +118,28 @@ STATE_DATA.each do |state, state_info|
 
 #=======================================================================
 # Reflection Section
+
+# Q1: What are the differences between the two different hash syntaxes shown in the state_data file?
+
+# A1: The STATE_DATA is a CONSTANT so it cannot be changed. It is the main group creating instances of several other hashes inside which are the key and values (population density and population) So a hash within a hash. The information is grouped together.
+
+
+# Q2: What does require_relative do? How is it different from require?
+
+# A2: # require_relative: instructs the file to load from a local location
+# require: load an external file
+
+# Q3: What are some ways to iterate through a hash?
+
+# A3: example.each { |key, value| puts "#{key}" "#{value}"}
+# example.each do |key, value|
+#  puts "This is an example of a hash #{key} and the #{value} we are printing." end
+
+
+# Q4: When refactoring virus_effects, what stood out to you about the variables, if anything?
+
+# A4: I believe state density since we were using a key and value together as one instead of two seperate things.
+
+# Q5: What concept did you most solidify in this challenge?
+
+# A5: Ways of accessing hashes, seeing a hash within a hash. Also using iteration through combined information to create instances of the STATE DATA.
